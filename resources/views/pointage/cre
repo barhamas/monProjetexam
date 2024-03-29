@@ -1,0 +1,459 @@
+@extends('navbar')
+
+@section('content')
+    <div class="col-md-8 offset-2 mt-5">
+        <div class="card">
+            <div class="card-header bg-success">
+                Ajouter un pointage
+            </div>
+            <div class="card-body">
+                @if(session('error'))
+                    <div class="alert alert-danger">{{ session('error') }}</div>
+                @endif
+                <form action="{{ route('pointage.store') }}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="nom">Nom:</label>
+                        <input type="text" class="form-control" id="nom" name="nom" @error('nom') is-invalid @enderror>
+                        @error("nom")
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom:</label>
+                        <input type="text" class="form-control" id="prenom" name="prenom" @error('prenom') is-invalid @enderror>
+                        @error("prenom")
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" @error('email') is-invalid @enderror>
+                        @error("email")
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" class="form-control" id="date" name="date" @error('date') is-invalid @enderror>
+                        @error("date")
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="heure_arr">Heure d'arrivée:</label>
+                        <input type="time" class="form-control" id="heure_arr" name="heure_arr" @error('heure_arr') is-invalid @enderror>
+                        @error("heure_arr")
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="heure_dep">Heure de départ:</label>
+                        <input type="time" class="form-control" id="heure_dep" name="heure_dep">
+                        @error("heure_dep")
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@extends('navbar')
+
+@section('content')
+    <div class="col-md-8 offset-2 mt-5">
+        <div class="card">
+            <div class="card-header bg-success">
+                Ajouter un pointage
+            </div>
+            <div class="card-body">
+                @if(session('error'))
+                    <div class="alert alert-danger">{{ session('error') }}</div>
+                @endif
+                <form action="{{ route('pointage.store') }}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="nom">Nom:</label>
+                        <input type="text" class="form-control" id="nom" name="nom" @error('nom') is-invalid @enderror>
+                        @error("nom")
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom:</label>
+                        <input type="text" class="form-control" id="prenom" name="prenom" @error('prenom') is-invalid @enderror>
+                        @error("prenom")
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" @error('email') is-invalid @enderror>
+                        @error("email")
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" class="form-control" id="date" name="date" @error('date') is-invalid @enderror>
+                        @error("date")
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="heure_arr">Heure d'arrivée:</label>
+                        <input type="time" class="form-control" id="heure_arr" name="heure_arr" @error('heure_arr') is-invalid @enderror>
+                        @error("heure_arr")
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="heure_dep">Heure de départ:</label>
+                        <input type="time" class="form-control" id="heure_dep" name="heure_dep">
+                        @error("heure_dep")
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection
+@extends('navbar')
+
+@section('content')
+    <div class="col-md-8 offset-2 mt-5">
+        <div class="card">
+            <div class="card-header bg-success">
+                Ajouter un pointage
+            </div>
+            <div class="card-body">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <form action="{{ route('pointage.store') }}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="personnel_id">Personnel:</label>
+                        <select class="form-control" id="personnel_id" name="personnel_id">
+                            @foreach($personnels as $personnel)
+                                <option value="{{ $personnel->id }}">{{ $personnel->nom }} {{ $personnel->prenom }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" class="form-control" id="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="heure_arr">Heure d'arrivée:</label>
+                        <input type="time" class="form-control" id="heure_arr" name="heure_arr">
+                    </div>
+                    <div class="form-group">
+                        <label for="heure_dep">Heure de départ:</label>
+                        <input type="time" class="form-control" id="heure_dep" name="heure_dep">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection
+
+
+
+
+
+
+
+private function calculerheurdep($heurarr, $heurtr)
+    {
+        // Convert working hours to minutes
+        $verifie = $heurtr * 60;
+
+        // Convert arrival time to minutes
+        $heuretemp = $this->convertTimeToMinutes($heurarr);
+
+        // Calculate departure time in minutes
+        $depheur = $heuretemp + $verifie;
+
+        // Convert departure time to HH:mm format
+        $heurdep = $this->convertMinutesToTime($depheur);
+
+        return $heurdep;
+    }
+
+    /**
+     * Convert time from HH:mm format to minutes.
+     */
+    private function convertirttm($temp)
+    {
+        list($heurs, $minutes) = explode(':', $temp);
+        return ($heurs * 60) + $minutes;
+    }
+
+    /**
+     * Convert minutes to time in HH:mm format.
+     */
+    private function convertirmtt($minutes)
+    {
+        $heurs = floor($minutes / 60);
+        $minutes = $minutes % 60;
+        return sprintf("%02d:%02d", $heurs, $minutes);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Pointage;
+use App\Models\Personnel;
+use Illuminate\Http\Request;
+
+class PointageController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $pointages = Pointage::all();
+        return view('pointage.index', ['pointages' => $pointages]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        $personnels = Personnel::all();
+        return view('pointage.create', ['personnels' => $personnels]);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'nom' => 'required|string',
+            'prenom' => 'required|string',
+            'email' => 'required|email',
+            'date' => 'required|date',
+            'heure_arr' => 'required|date_format:H:i',
+            'heure_dep' => 'nullable|date_format:H:i|after:heure_arr',
+        ]);
+
+        $personnel = Personnel::where('email', $request->email)->first();
+        if (!$personnel) {
+            return redirect()->back()->with('error', 'Employé non trouvé.');
+        }
+
+        $heureDepart = null;
+
+        if ($request->heure_arr) {
+            // Calcul de l'heure de départ en ajoutant les heures de travail aux heures d'arrivée
+            $heuresTravail = $personnel->horaires_travail;
+            $heureArrivee = \Carbon\Carbon::parse($request->heure_arr);
+            $heureDepart = $heureArrivee->addHours($heuresTravail)->format('H:i');
+        }
+
+        $pointage = new Pointage();
+        $pointage->personnel_id = $personnel->id;
+        $pointage->date = $request['date'];
+        $pointage->heure_arr = $request['heure_arr'];
+        $pointage->heure_dep = $heureDepart;
+
+        $pointage->save();
+
+        return redirect()->route('pointage.index')->with('success', 'Pointage ajouté avec succès');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        $pointage = Pointage::find($id);
+        $personnels = Personnel::all();
+        return view('pointage.edit', ['pointage' => $pointage, 'personnels' => $personnels]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        $validatedData = $request->validate([
+            'nom' => 'required|string',
+            'prenom' => 'required|string',
+            'email' => 'required|email',
+            'date' => 'required|date',
+            'heure_arr' => 'required|date_format:H:i',
+            'heure_dep' => 'nullable|date_format:H:i|after:heure_arr',
+        ]);
+
+        $personnel = Personnel::where('email', $request->email)->first();
+        if (!$personnel) {
+            return redirect()->back()->with('error', 'Employé non trouvé.');
+        }
+
+        $heureDepart = null;
+
+        if ($request->heure_arr) {
+            // Calcul de l'heure de départ en ajoutant les heures de travail aux heures d'arrivée
+            $heuresTravail = $personnel->horaires_travail;
+            $heureArrivee = \Carbon\Carbon::parse($request->heure_arr);
+            $heureDepart = $heureArrivee->addHours($heuresTravail)->format('H:i');
+        }
+
+        $pointage = Pointage::find($id);
+        $pointage->personnel_id = $personnel->id;
+        $pointage->date = $request->date;
+        $pointage->heure_arr = $request->heure_arr;
+        $pointage->heure_dep = $heureDepart;
+
+        $pointage->save();
+
+        return redirect()->route('pointage.index')->with('success', 'Pointage modifié avec succès');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        $pointage = Pointage::find($id);
+        $pointage->delete();
+
+        return redirect()->route('pointage.index')->with('success', 'Pointage supprimé avec succès');
+    }
+
+    /**
+     * Calculate departure time based on arrival time and personnel working hours.
+     */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-sm-6 col-xl-4">
+                        <div class="card card-body bg-warning has-bg-image">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h3 class="mb-0">{{ $totalAdministrateurs }}</h3>
+                                    <span class="text-uppercase font-size-xs font-weight-bold">Total Administrateurs</span>
+                                </div>
+
+                                <div class="ml-3 align-self-center">
+                                    <i class="icon-coins icon-3x opacity-75"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
